@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Food Ordering</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		body {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+		}
+		#fieldset-1 {
+			padding: 20px;
+			margin-bottom: 20px ;
+		}
+		#table-1 {
+			margin-bottom: 20px;
+		}
+		h4 {
+			margin-bottom: 20px;
+		}
+	</style>
+</head>
+<body>
+
+	<img src="assets/2PC-CHICKEN-BOXED-MEAL.webp">
+	<h4>2-Pc Korean Fried Chicke Box Meal</h4>
+
+	<fieldset id="fieldset-1">
+		<table width="700px" id="table-1">
+			<tr>
+				<td>
+					<input type="checkbox" name="Korean_chicken"> <label for="2pc_chicken">2-Pc Korean Fried Chicke Box Meal</label>						
+				</td>
+				<td>Php 230.00</td>				
+			</tr>	
+		</table>
+
+	<table width="500px">
+		<tr>
+			<td>
+				<h4>Choice of Flavor: </h4>
+			</td>
+			<td>
+				<h4>Choice of Drinks:</h4>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table>
+					<tr><td><input type="checkbox" name="Yangnyeom"> <label for="Yangnyeom"> Yangnyeom</label></td></tr>
+					<tr><td><input type="checkbox" name="Crunchy Garlic"> <label for="Crunchy"> Crunchy</label></td></tr>
+					<tr><td><input type="checkbox" name="Soy Garlic"> <label for="Soy Garlic"> Soy Garlic</label></td></tr>
+					<tr><td><input type="checkbox" name="Klassic Fried Chicken with Gravy"> <label for="Klassic Fried Chicken with Gravy"> Klassic Fried Chicken with Gravy</label></td></tr>
+				</table>
+			</td>
+			<td>
+				<table>
+					<select value=" " multiple style="padding:5px">
+						<option><label for="Iced-Tea-R"> Coke </label></option>
+						<option><label for="Iced-Tea-L"> Sprite </label></option>
+						<option><label for="Del Monte-R"> Royal </label></option>
+						<option><label for="Del Monte-R"> Mountain Dew</label></option>
+					</select>
+				</table>	
+			</td>
+		</tr>	
+	</table>
+	</fieldset>
+		<button type="button" value="submit" style="padding: 5px 2%;">OK</button>
+</body>
+</html>

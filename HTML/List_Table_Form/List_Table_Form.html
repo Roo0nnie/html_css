@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--HTML List Table & Forms-->
+	<title></title>
+</head>
+<body>
+	<h2>Ordered List</h2>
+	<ol type="A">
+		<li>Coffee</li>
+		<li>Milk</li>
+		<li>Tea</li>
+	</ol>
+	<h2>Unordered List</h2>
+	<ol type="I">
+		<li>Coffee</li>
+		<li>Milk</li>
+		<li>Tea</li>
+	</ol>
+	<h2>Table</h2>
+	<table border="1" width="1000px">
+		<tr>
+			<th>Name</th>
+			<th>Age</th>
+			<th>Email</th>
+		</tr>
+		<tr>
+			<td>John</td>
+			<td>29</td>
+			<td>john@email.com</td>
+		</tr>
+		<tr>
+			<td>Jane</td>
+			<td>27</td>
+			<td>jane@email.com</td>
+		</tr>
+	</table>
+	<!--
+	action: ilalagay dito kung saan pupunta like href
+	method: how data is passed. Type of method
+	1. post - (requesting data from) hidden in the address bar.  
+	2. get - (get from the name..) visible in the address bar.
+
+	-->
+	<form action="aboutME.html" method="get"><!--
+		<input type="number" name="number" placeholder="number!">
+	
+	<br>
+	<label for="firsname">FirstName</label>
+	<input type="text" name="first-name" placeholder="FirstName">
+
+	<br>
+	<label for="lastname">LastName</label>
+	<input type="text" name="last-name" placeholder="Last name">
+
+	<br>
+	<label for="password">Password</label>
+	<input type="password" name="password" placeholder="password">
+
+	<br>
+	<input type="email" name="email" placeholder="email">
+
+	<!--radio button is for sigle selection like male and female-
+	to group: 
+	the name must the same------
+	-->
+
+	<input type="radio" name="gender" value="Coke">Coke
+	<br>
+	<input type="radio" name="gender" value="Sprite">Sprite
+	<br>
+	<input type="radio" name="gender" value="Royal">Royal
+	<br>
+
+	<!--Drop Down-->
+	<select name="color" multiple>
+		<option value="red">RED</option>
+		<option value="orange">ORANGE</option>
+		<option value="black">BLACK</option>
+		<option value="blue">BLUE</option>
+	</select>
+
+	<input type="file" name="file">
+	<input type="image" name="image">
+
+	<!--Required attribute: required type "value"-->
+
+	<input type="submit" name="submit" value="null">
+	</form>
+
+	<!--Used for multi selection--
+	not necessary for grouping
+	-->
+
+	<p>Food</p>
+	<input type="checkbox" name="consent" value="rice">
+	<input type="checkbox" name="cont">
+
+
+
+
+</body>
+</html>

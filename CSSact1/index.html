@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CSS Sample</title>
+
+	<style type="text/css">
+		* {
+			margin: 0px;
+			padding: 0px;
+			box-sizing: border-box;
+		}
+		body {
+			display: flex;
+			justify-content: center;
+			height: 100vh;
+			width: 100%;
+		}
+		.black {
+			height: 100px;
+			width: 500px;
+			background: black;
+			margin-top: 100px;
+		}
+		.white {
+			margin-left: 50px;
+			height: 150px;
+			width: 400px;
+			background: white;
+			margin-top: 60px;
+			border-radius: 10px;
+			box-shadow: 0 0 15px rgb(100, 100, 100, 20);
+		}
+		.center {
+			height: 170px;
+			width: 150px;
+			right: 44%;
+			margin-top: -10px;
+			position: absolute;
+			background: blue;
+			border-radius: 10px;			
+		}
+	</style>
+</head>
+<body>
+	<div class="black">
+		<div class="white">
+			<div class="center"></div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Registration Form</title>
+	<style type="text/css">
+		* {
+			margin: 0px;
+			padding: 0px;
+			box-sizing: border-box;
+		}
+		body {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+		}
+		form {
+			padding: 12px 20px;
+			margin-top: 200px;
+			box-shadow: ;
+			border: 5px solid rgb(190, 190, 190, 0);
+			box-shadow: 0 0 15px rgb(100, 100, 100, 30);
+		}
+		.submit {
+			text-align: center;
+		}
+		.submit button {
+			margin-top: 30px;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+		}
+		
+
+	</style>
+</head>
+<body>
+<form action="register.html" method="post">
+	<table width="400px">
+		<h1 style="text-align: center; margin-bottom: 20px;">Registration Form</h1>	
+			<tr>
+				<td><label for="firstname">First Name: </label></td>
+				<td><input required type="text" name="firstname"></td>
+			</tr>
+			<tr>
+				<td><label for="lastname">Last Name: </label></td>
+				<td><input required type="text" name="firstname"></td>
+			</tr>
+			<tr>
+				<td><label for="age">Age: </label></td>
+				<td><input required type="number" name="age"></td>
+			</tr>
+			<tr>
+				<td><label for="gender">Gender:</label></td>
+				<td><input type="radio" name="gender" value="Male">Male <input type="radio" name="gender" value="Female">Female</td> 
+			</tr>
+			<tr>
+				<td><label for="E-mail">E-mail: </label></td>
+				<td><input required type="email" name="email"></td>
+			</tr>
+			<tr>
+				<td><label for="number">Mobile Number: </label></td>
+				<td><input required type="number" name="mob_number"></td>
+			</tr>
+			<tr>
+				<td><label for="password">Password: </label></td>
+				<td><input required type="password" name="password"></td>
+			</tr>
+	</table>
+		<div class="submit">
+			<button type="submit" value="submit">Click</button>
+		</div>
+			
+</form>	
+</body>
+</html>
