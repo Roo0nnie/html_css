@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Exercise 4</title>
+</head>
+<body>
+    <div class="divisiblebyseven">
+        <input type="number" id="dividebyseven" placeholder="input an integer">
+        <button type="button" onclick="checkdivisiblebyseven()">check</button>
+        <button type="button" onclick="twonumbers()">check</button>
+    </div>
+</body>
+    <script>
+        function checkdivisiblebyseven() {
+            let input = document.getElementById('dividebyseven').value;
+            let parseValue = parseInt(input);
+            
+            while (parseValue % 7 != 0) {
+                parseValue++;
+            }
+            alert(parseValue);
+        }
+
+        
+        function twonumbers() {
+            let numbers = [1, 1, 2, 2, 2, 3, 3, 4, 5, 5, 5, 6, 6, 7, 7, 7, 8, 9, 9, 9];
+            
+            let counts = 0;
+            for (let i = 0; i < numbers.length - 1; i++) {
+              if (numbers[i] === numbers[i+1]) {
+                if (counts[numbers[i]]) {
+                  counts[numbers[i]] += 1;
+                } else {
+                  counts[numbers[i]] = 1;
+                }
+              }
+            }
+            alert(counts);
+        }
+    </script>
+</html>

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <title>Loop For JavaScript</title>
 </head>
-<body>
+<body><!--
     <div id="input"></div>
     <div id="byTres"></div>
     <div id="multiply"></div>
@@ -15,17 +15,84 @@
     <div id="objectarray"></div>
     <div id="forEach"></div>
     <div id="objectSample"></div>
-    <div id="employes"></div>
+    <div id="employes"></div> 
+
+    <div id="length"></div>-->
+    <div id="areaofcircle"></div>
+
+
     <script>
+        const areaOfCircle = (radius) => {
+            const pi = 3.141656;
+            let area = (pi * radius) ** 2;
+            return area;
+        }
+        document.getElementById('areaofcircle').innerHTML = "Area of circle: " + areaOfCircle(2);
+        
+        
+
+        /*
+        const numberarray = ["Ronnie","Ronn","Ro"];
+        for(let i in numberarray) {
+            console.log(numberarray[i]);
+        }
+        
+
+
+
+            let student = [
+                {name:'Ronnie', last:'Estillero', age:21},
+                {name:'Roselyn', last:'Lionag', age:21},
+                {name:'Kristoffer', last:'Ofalsa', age:20},
+                {name:'Regi', last:'Ariola', age:19},
+                {name:'Sent', last:'Espina', age:20}
+            ];
+            const studentmapping = student.filter(function(filterdata) {
+                return filterdata.age < 21;
+            }).map(function(mapdata) {
+                return mapdata.name;
+            });
+            console.log(studentmapping);
+
+
+
+
+
+
+
+            let studentJSON = JSON.stringify(student);
+            console.log(studentJSON); /*This is sample for JSON*/
+
+    /*
+            student.forEach((stdnt) => {
+                document.getElementById('arayobjectloop').innerHTML += "<br>" + stdnt.name + " " + stdnt.last;
+            })/*arrow function using loop of forEach*/
+
+
+
+            
+
+     /*
+            let fruits = ['Santol', 'Manga', 'Apple', 'Banana']; /*array*/
+            
+      /*      fruits.forEach((fruit) => {
+                document.getElementById('length').innerHTML += fruit +" ";
+            })
+        
+
+
+
         let employees = [{lastname:"Estillero", firstname:"Ronnie", age:21},
                         {lastname:"Lionag",firstname:"Roselyn", age:21},
                         {lastname:"Ofalsa",firstname:"Kristoffer", age:20}];
-
+                /*this is array, inside is the object*/
+/*
             employees.forEach((employ) => {
-                if (employ.age == 21) {
+                if(employ.age == 21) {
                     document.getElementById('employes').innerHTML += '<br>' + employ.firstname + ' ' + employ.lastname + ' ' + employ.age;
                 }
             })
+
 
         let sample = [1,2,3,4,5];
         sample.forEach((num) => {
@@ -39,9 +106,11 @@
 
         let product = 0;
         for(let i=1; i<=4; i++) {
-            product = product + i;
-            console.log(product);   
-        }
+            product = product + 4;
+            console.log("product"+product);   
+        }   
+        /*this is for loop sample*/
+/*
         for(let i=1;i<=10;i++) {
             if (i == 10) {
                 document.getElementById('input').innerHTML += i + '.';
@@ -78,6 +147,7 @@
         num1.forEach(function(value) {
             document.getElementById('num1').innerHTML += num1.value + ' ';
         })
+        */
     </script>
 </body>
 </html>
