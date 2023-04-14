@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Loop For JavaScript</title>
+</head>
+<body>
+    <div id="input"></div>
+    <div id="byTres"></div>
+    <div id="multiply"></div>
+    <div id="consarray"></div>
+    <div id="num1"></div>
+    <div id="objectarray"></div>
+    <div id="forEach"></div>
+    <div id="objectSample"></div>
+    <div id="employes"></div>
+    <script>
+        let employees = [{lastname:"Estillero", firstname:"Ronnie", age:21},
+                        {lastname:"Lionag",firstname:"Roselyn", age:21},
+                        {lastname:"Ofalsa",firstname:"Kristoffer", age:20}];
+
+            employees.forEach((employ) => {
+                if (employ.age == 21) {
+                    document.getElementById('employes').innerHTML += '<br>' + employ.firstname + ' ' + employ.lastname + ' ' + employ.age;
+                }
+            })
+
+        let sample = [1,2,3,4,5];
+        sample.forEach((num) => {
+            if (num === 5) {
+                document.getElementById('forEach').innerHTML += ".";
+            }
+            else {
+                document.getElementById('forEach').innerHTML += num;                
+            }
+        })
+
+        let product = 0;
+        for(let i=1; i<=4; i++) {
+            product = product + i;
+            console.log(product);   
+        }
+        for(let i=1;i<=10;i++) {
+            if (i == 10) {
+                document.getElementById('input').innerHTML += i + '.';
+            } else {
+                document.getElementById('input').innerHTML += i + ' ';
+            }
+            
+        }
+        for(let i=1;i<=20; i+=2) {
+            document.getElementById('byTres').innerHTML += i + ' ';
+        }
+
+        function multiply (multiplicant, multiplier) {
+            let product = 0;
+            for(let i=1;i<=multiplier;i++) {
+                product = product + multiplicant;
+            }
+            return product;
+        }
+        document.getElementById('multiply').innerHTML = multiply(4,3);
+        const consarray = [1, 2, 3, 4, 5, 6 ,7 ,8 ,9 ,10];
+        for(let i=1; i<=consarray.length;i+=2) {
+            document.getElementById('consarray').innerHTML += consarray[i];
+        }
+
+        const objectarray = [name="Ronnie", last="Estillero"];
+        for(let i in objectarray) {
+            document.getElementById('objectarray').innerHTML += objectarray[i] + " ";
+        }
+        consarray.forEach(function(value,index,array){
+            document.getElementById('objectarray').innerHTML += "<br>" +"value" + value + ", " + "index" + index + " " + "array" + array ;
+        }) 
+        const num1 = [num="1"];
+        num1.forEach(function(value) {
+            document.getElementById('num1').innerHTML += num1.value + ' ';
+        })
+    </script>
+</body>
+</html>
