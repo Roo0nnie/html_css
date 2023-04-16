@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/js/stringmethod.js"></script>
+
+    <title>String Method</title>
+</head>
+<body>
+    <h1>Password and Username Testing</h1>
+    <div class="input">
+        <form action="" target="_blank" method="post">
+            <input type="text" id="username" placeholder="User.." required/>
+            <input type="password" id="userpassword" placeholder="pass.." required/>
+           <button onclick="loginTest()">submit</button>
+        </form>
+    </div>
+
+    <h1>Check Number Of Day</h1>
+    <input type="text" id="numberOfDays">
+    <input type="button" value="submit" onclick="checknumberOfDays()">
+    <div id="validate"></div>
+
+    <h1>Today's Day</h1>
+    <input type="button" value="check" onclick="checkDate()">
+    <div id="checkDateResult"></div>
+
+    <h1>forEach function</h1>
+    <div id="foreach"></div>
+
+    <h1>Employee Sample</h1>
+    <div id="employee"></div>
+
+    <h1>Function Method</h1>
+    <div id="area_value"></div>
+
+    <script>
+        let staff = [
+                    {name: "Oliver Queen", title: "CEO", gender: "male", age: 38, languages: ["english", "spanish"]}, 
+                    {name: "Ben Hur", title: "Security consultant", gender: "male", age: 25, languages: ["latin", "italian"]}, 
+                    {name: "Jessica Alba", title: "Admin Assistant", gender: "female", age: 23, languages: ["english", "spanish"]}, 
+                    {name: "Pepper Piper", title: "Quality Assurance", gender: "female", age: 32, languages: ["english", "spanish"]},
+                    {name: "Red Sullivan", title: "Project Manager", gender: "male", age: 27, languages: ["russian", "english"]},
+                    {name:"Juan Dela Cruz", title: "Manager", age: 24, gender: "male", languages: ["russian", "french"]},
+                    {name:"Anna Salvador", title: "Junior Dev", age: 21, gender: "female", languages: ["english", "french"]},
+                    {name:"Mark Bautista", title: "Senior Fullstack Dev", age: 28, gender: "male", languages: ["russian", "spanish"]},
+                    {name:"Micheal Garcia", title: "CEO", age: 40, gender: "male", languages: ["english", "latin"]}];
+
+       document.getElementById('area_value').innerHTML += '<br/>' + circle_area(2);
+       document.getElementById('area_value').innerHTML += '<br/>' + circle_area(3);
+       document.getElementById('area_value').innerHTML += '<br/>' + circle_area(5);
+
+       document.getElementById('area_value').innerHTML += '<br/>' + checkOddEven(5);
+       document.getElementById('area_value').innerHTML += '<br/>' + checkOddEven(6);
+       document.getElementById('area_value').innerHTML += '<br/>' + checkOddEven(10);
+
+       document.getElementById('area_value').innerHTML += '<br/>' + getStaffCount(staff, 'gander', 27, '>=');
+
+        const loginTest = () => {
+            let email = 'angelo@kodego.ph';
+            let password = 'PasswOrd';
+        
+            if(email == document.getElementById('username').value && (password == document.getElementById('userpassword').value)) {
+                alert('log in!');
+                window.location.href = '';
+            } else {
+                alert('log out');
+                window.location.href = '';
+            }
+        }
+        function checknumberOfDays() {
+            let DaysInAMonth = document.getElementById('numberOfDays').value;
+
+            switch (DaysInAMonth) {
+                case 'January':
+                case 'March':
+                case 'May':
+                case 'July':
+                case 'August':
+                case 'October':
+                case 'December':
+                    document.getElementById('validate').innerHTML = 31;
+                    break;
+                case 'September':
+                case 'April':
+                case 'June':
+                case 'November':
+                    document.getElementById('validate').innerHTML = 30;
+                    break;
+                case 'February': 
+                    document.getElementById('validate').innerHTML = 28;
+                    break;
+                default:
+                    document.getElementById('validate').innerHTML = 'Invalid';
+                    break;
+            }   
+        }
+        const checkDate = () => {
+            const currDate = new Date();
+            let today = currDate.getDay();
+            let day = '';
+
+            switch (today) {
+                case 0:
+                    day = 'Saturday';
+                    document.getElementById('checkDateResult').innerHTML = day;
+                    break;
+                case 1:
+                    day = 'Sunday';
+                    document.getElementById('checkDateResult').innerHTML = day;
+                    break;
+                case 2:
+                    day = 'Monday';
+                    document.getElementById('checkDateResult').innerHTML = day;
+                    break;
+                case 3:
+                    day = 'Tuesday';
+                    document.getElementById('checkDateResult').innerHTML = day;
+                    break;
+                case 4:
+                    day = 'Wednesday';
+                    document.getElementById('checkDateResult').innerHTML = day;
+                    break;
+                case 5:
+                    day = 'Thursday';
+                    document.getElementById('checkDateResult').innerHTML = day;
+                    break;
+                case 6:
+                    day = 'Friday';
+                    document.getElementById('checkDateResult').innerHTML = day;
+                    break;
+            }
+        }
+
+        staff.forEach((sample) => {
+            if(sample.gender === 'male') {
+                document.getElementById('foreach').innerHTML += '<br/>' + sample.gender;
+            }
+        })
+
+        let employees = [
+                {firstName:"Juan", lastName:"Dela Cruz", age: 24,gender: "male", jobTitle: "Manager"},
+                {firstName:"Anna", lastName:"Salvador", age: 21, gender: "female", jobTitle: "Junior Dev"},
+                {firstName:"Mark", lastName:"Bautista", age: 28, gender: "male", jobTitle: "Senior Fullstack Dev"},
+                {firstName:"Micheal", lastName:"Garcia", age: 31, gender: "male", jobTitle: "CEO"},
+            ];
+        
+            for(let i in employees) {
+                let employ = employees[i];
+                document.getElementById('employee').innerHTML += '<br/>' + employ.firstName;
+            }
+            employees.forEach((employee) => {
+                if(employee.gender === 'male'){        
+                    document.getElementById('employee').innerHTML += '<br>' + employee.firstName + " " + employee.lastName + "("+ employee.age +")" + " - " + employee.jobTitle;
+                }
+            });
+    </script>
+</body>
+</html>
