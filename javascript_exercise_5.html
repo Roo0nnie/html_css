@@ -13,32 +13,46 @@
 </head>
 <body>
 
-<div class="container">
-    <div class="flex-box d-flex justify-content-center flex-column">
-        <section>
-            <h4 class="mt-4">Invoice Information</h4>
-            <div id="invoiceTo"></div>
-            <div id="address"></div>
-            <div id="date"></div>
-            <div id="invoiceNumber"></div>
-            <div id="paymentMode"></div>
-        </section>
-        <section>
-                <div class="table-responsive striped mt-4">
-                    <table class="table table-dark table-striped">
-                            <th style="width:25%;">Description</th>
-                            <th style="width:25%;">Quantity</th>
-                            <th style="width:25%;">Unit Price</th>
-                            <tr id="row">
-                                <td id="description"></td>
-                                <td id="Qty"></td>
-                                <td id="unitPrice"></td>
-                            </tr>
-                    </table>
-                </div>
-        </section>
+    <div class="container">
+        <h2>Invoice Details</h2>
+        <div class="row">
+            <div class="col-sm-8">
+                <label id="invoice_to">Invoice To: </label>
+            </div>
+            <div class="col-sm-4">
+                <label id="invoice_date">Date: </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-8">
+                <label id="invoice_address">Address: </label>
+            </div>
+            <div class="col-sm-4">
+                <label id="invoice_num">Invoice #: </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <label id="invoice_payment_mode">Payment Mode: </label>
+            </div>
+        </div>
     </div>
-</div>            
+
+    <div class="container">
+        <table class="table table-dark table-stripe-columns mt-4">
+            <thead>
+                <tr>
+                    <th style="width: 50%;">Description</th>
+                    <th style="width: 10%;">Qty</th>
+                    <th style="width: 20%;">Unit Price</th>
+                    <th style="width: 20%;">Amount</th>
+                </tr>
+            </thead>
+            <tbody id="invoice_items">
+
+            </tbody>
+        </table>
+    </div>           
     <script src="/js/javascript_exercise_5.js"></script>
 </body>
 

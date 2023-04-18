@@ -6,30 +6,40 @@ let invoice = {
     invoiceNumber:"6845",
     paymentMode:"COD"};
 
-    document.getElementById('invoiceTo').innerHTML = 'Name: '+ invoice.invoiceTo;
-    document.getElementById('address').innerHTML = 'Address: '+ invoice.address1.concat(' ',invoice.address2);
-    document.getElementById('date').innerHTML = 'Date: '+ invoice.date.split('-', 3).reverse(invoice.date).join('/');
-    document.getElementById('invoiceNumber').innerHTML = 'Number: '+ invoice.invoiceNumber.padStart(10, 0);
-    document.getElementById('paymentMode').innerHTML = 'Payment: '+ invoice.paymentMode;
+    document.getElementById('invoice_to').innerHTML = 'Name: '+ invoice.invoiceTo;
+    document.getElementById('invoice_address').innerHTML = 'Address: '+ invoice.address1.concat(' ',invoice.address2);
+    document.getElementById('invoice_date').innerHTML = 'Date: '+ invoice.date.split('-', 3).reverse(invoice.date).join('/');
+    document.getElementById('invoice_num').innerHTML = 'Number: '+ invoice.invoiceNumber.padStart(10, 0);
+    document.getElementById('invoice_payment_mode').innerHTML = 'Payment: '+ invoice.paymentMode;
 
-    let invoiceItems = [
-                {description: "Mouse", Qty: 3, unitPrice: 200}, 
-                {description: "Keyboard", Qty: 3, unitPrice: 400},
-                {description: "Monitor", Qty: 6, unitPrice: 5400},
-                {description: "CPU Tower Case", Qty: 3, unitPrice: 1200},
-                {description: "Headset", Qty: 3, unitPrice: 500},
-                {description: "UPS", Qty: 1, unitPrice: 4000}];
+                let invoiceItems = [{description: "Mouse", Qty: 3, unitPrice: 200}, 
+                    {description: "Keyboard", Qty: 3, unitPrice: 400},
+                    {description: "Monitor", Qty: 6, unitPrice: 5400},
+                    {description: "CPU Tower Case", Qty: 3, unitPrice: 1200},
+                    {description: "Headset", Qty: 3, unitPrice: 500},
+                    {description: "UPS", Qty: 1, unitPrice: 4000},];
+                
+                    let totalPrice = 0;
+                    invoiceItems.forEach((item)=>{
 
-    let valueInside = ["description", "Qty", "unitPrice"];
-    let unitPriceOfEachl = 0;
-    let total = 0;
+                        let amount = item.Qty * item.unitPrice;
+                        totalPrice += amount; 
+                        let newRow = `<tr>`;
+                            newRow += `<td>${item.description}</td>`;
+                            newRow += `<td>${item.Qty}</td>`;
+                            newRow += `<td>${item.unitPrice}</td>`;
+                            newRow += `<td>${amount}</td>`;
+                            newRow += `</tr>`;
+                        
+                        document.getElementById("invoice_items").innerHTML += newRow;
+                        
+                    });
 
-    invoiceItems.forEach((item) => {
-        valueInside.forEach((itemValue) => {
-            unitPriceOfEach = item.unitPrice;
-            document.getElementById(itemValue).innerHTML += item[itemValue] + '</br>';
-        });
-        total += unitPriceOfEach;
-    });
-    document.getElementById('unitPrice').innerHTML += total;
+                            newRow = `<tr>`;
+                            newRow += `<td>${'Total'}</td>`;
+                            newRow += `<td></td>`;
+                            newRow += `<td></td>`;
+                            newRow += `<td>${totalPrice}</td>`
+                            newRow += `</tr>`;
+                            document.getElementById("invoice_items").innerHTML += newRow;
     

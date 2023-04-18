@@ -36,7 +36,40 @@
     <h1>Function Method</h1>
     <div id="area_value"></div>
 
+    <h1 style="color:red;">april 17, 2023</h1>
+
+    <h1>My Date</h1>
+    <div id="currentDate"></div>
+
+    <h1>My Math Method</h1>
+    <div id="mathMethod"></div>
+
+    <h1>String Method</h1>
+    <div id="stringMethod"></div>
+
     <script>
+/*
+        let testnum = 12.45;
+
+        document.getElementById('mathMethod').innerHTML = testnum.toFixed(2);
+        document.getElementById('mathMethod').innerHTML += '<br>' + Math.max(10,20);
+        document.getElementById('mathMethod').innerHTML += '<br>' + Math.PI.toFixed(4);
+        document.getElementById('mathMethod').innerHTML += '<br>' + Math.E.toFixed(6);
+        document.getElementById('mathMethod').innerHTML += '<br>' + Math.sqrt;
+        document.getElementById('mathMethod').innerHTML += '<br>' + Math.log10;
+
+        document.getElementById('mathMethod').innerHTML += '<br>' + Math.round(12.4);
+        document.getElementById('mathMethod').innerHTML += '<br>' + Math.round(12.56);
+
+        document.getElementById('mathMethod').innerHTML += '<br>' + Math.random();
+        document.getElementById('mathMethod').innerHTML += '<br>' + Math.floor(Math.random() * 10);
+        document.getElementById('mathMethod').innerHTML += '<br>' + Math.floor(Math.random() * 10);
+
+        const alphabet = 'abcdefg';
+        document.getElementById('mathMethod').innerHTML += '<br>' +alphabet.charAt(Math.floor(Math.random() * 7) +1);
+*/
+
+
         let staff = [
                     {name: "Oliver Queen", title: "CEO", gender: "male", age: 38, languages: ["english", "spanish"]}, 
                     {name: "Ben Hur", title: "Security consultant", gender: "male", age: 25, languages: ["latin", "italian"]}, 
@@ -156,6 +189,120 @@
                     document.getElementById('employee').innerHTML += '<br>' + employee.firstName + " " + employee.lastName + "("+ employee.age +")" + " - " + employee.jobTitle;
                 }
             });
+            const addDisplayResult = (target, value, nextLine='<br/>') => {
+                document.getElementById(target).innerHTML += nextLine + value;
+            }
+            let currentDate = new Date();
+            document.getElementById('currentDate', currentDate);
+
+            let specificDate = new Date('2023-04-15');
+            addDisplayResult('currentDate', specificDate);
+
+            specificDate = new Date('September 8, 2001 02:45:30');
+            addDisplayResult('currentDate', specificDate);
+
+            specificDate = new Date('2001-09-08 02:45:30');
+            addDisplayResult('currentDate', specificDate);
+
+            specificDate = new Date(2001 , 09, 21, 45, 30, 12);
+            addDisplayResult('currentDate', specificDate);
+
+            addDisplayResult('currentDate', specificDate.toUTCString().replace('GMT', ''));
+            addDisplayResult('currentDate', specificDate.toISOString().replace('.000Z', ''));
+            addDisplayResult('currentDate', currentDate.toDateString());
+
+            const dateFormatter = (date, format) => {
+                let year = date.getFullYear();
+                let month = date.getMonth();
+                let day = date.getDate();
+                let hour = date.getHours();
+                let minute = date.getMinutes();
+                let second = date.getSeconds();
+                let milSec = date.getMilliseconds();
+
+                format = format.replace('yyyy', year);
+                format = format.replace('mm', month.toString().padStart(2, '0'));
+                format = format.replace('dd', day.toString().padStart(2, '0'));
+                format = format.replace('hh', hour.toString().padStart(2, '0'));
+                format = format.replace('MM', minute.toString().padStart(2, '0'));
+                format = format.replace('ss', second.toString().padStart(2, '0'));
+                format = format.replace('ms', milSec.toString().padStart(2, '0'));
+                
+                return format;
+                
+            }   
+
+            addDisplayResult('currentDate', dateFormatter(specificDate, 'dd/mm/yyyy'));
+            addDisplayResult('currentDate', dateFormatter(specificDate, 'dd-mm-yyyy'));
+
+            const DAYS = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+            const SHORT_DAYS = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+            const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+            const SHORT_MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+            specificDate = new Date(2001 , 09, 21, 45, 30, 12);
+            
+            addDisplayResult('currentDate', specificDate.getDate());
+            addDisplayResult('currentDate', MONTHS[specificDate.getMonth()]);
+            addDisplayResult('currentDate', specificDate.getHours());
+            addDisplayResult('currentDate', specificDate.getFullYear());
+            addDisplayResult('currentDate', specificDate.getMinutes());
+            addDisplayResult('currentDate', specificDate.getMilliseconds());
+
+            currentDate = new Date();
+            addDisplayResult('currentDate', MONTHS[currentDate.getMonth()]);
+            addDisplayResult('currentDate', currentDate.getDate());
+            addDisplayResult('currentDate', SHORT_DAYS[currentDate.getDay()]);
+            addDisplayResult('currentDate', currentDate.getFullYear());
+            addDisplayResult('currentDate', currentDate.getHours());
+            addDisplayResult('currentDate', currentDate.getMinutes());
+            addDisplayResult('currentDate', currentDate.getSeconds());
+            addDisplayResult('currentDate', currentDate.getMilliseconds());
+
+            currentDate.setDate(currentDate.getDate() + 1);
+            addDisplayResult('currentDate', DAYS[currentDate.getDay()]);
+
+            addDisplayResult('mathMethod', Math.PI);
+            addDisplayResult('mathMethod', Math.E);
+            addDisplayResult('mathMethod', Math.SQRT2);
+            addDisplayResult('mathMethod', Math.log10(2,1));
+
+            addDisplayResult('mathMethod', Math.max(10,20,30));
+            addDisplayResult('mathMethod', Math.min(10,20,30));
+
+            addDisplayResult("mathMethod", Math.round(12.4));
+            addDisplayResult("mathMethod", Math.floor(12.4));
+            addDisplayResult("mathMethod", Math.ceil(12.4));
+
+            addDisplayResult("mathMethod", Math.floor(-10.4));
+            addDisplayResult("mathMethod", Math.ceil(-13.4));
+            
+            addDisplayResult("mathMethod", Math.floor(Math.random()*2)+1);
+
+            const alphabet = "abcdefghijklmnopqrstuvwxyz";
+            addDisplayResult("mathMethod", alphabet.charAt(Math.floor(Math.random()*alphabet.length)));
+
+        let employ = [
+        {firstName:"Juan", lastName:"Dela Cruz", age: 24,gender: "male", jobTitle: "Manager"},
+        {firstName:"Anna", lastName:"Salvador", age: 21, gender: "female", jobTitle: "Junior Dev"},
+        {firstName:"Mark", lastName:"Bautista", age: 28, gender: "male", jobTitle: "Senior Fullstack Dev"},
+        {firstName:"Micheal", lastName:"Garcia", age: 31, gender: "male", jobTitle: "CEO"},
+    ];
+
+    addDisplayResult("mathMethod", employ[Math.floor(Math.random()*employ.length)].firstName);
+    addDisplayResult("mathMethod", Math.floor(Math.random()*30)+20);
+    addDisplayResult("mathMethod", Math.floor(Math.random()*6)+5);
+    
+
+
+
+            
+          
+           
+            
+            
+            
+
     </script>
 </body>
 </html>
