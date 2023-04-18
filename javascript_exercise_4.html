@@ -4,17 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
     <title>Function Exercise 4</title>
 </head>
 <body>
-    <div class="divisiblebyseven">
-        <input type="number" id="dividebyseven" placeholder="input an integer">
-        <button type="button" onclick="checkdivisiblebyseven()">check</button>
-        <button type="button" onclick="twonumbers()">check</button>
+    <div class="container">
+      <div class="box">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="divisiblebyseven">
+              <h1>Machine Learning 1</h1>
+              <input type="number" class="form-control" id="dividebyseven" placeholder="input an integer">
+              <button type="button" class="btn bg-primary" onclick="checkdivisiblebyseven()">check</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="Machine_Learning_2">
+              <h1>Machine Learning 2</h1>
+              <div id="machineLearning2"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="Machine_Learning_3">
+              <h1>Machine Learning 3</h1>
+              <div id="machineLearning3"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
 </body>
     <script>
-        function checkdivisiblebyseven() {
+      /*the condition stop if the next number is divisible by 7*/
+        checkdivisiblebyseven = () => {
             let input = document.getElementById('dividebyseven').value;
             let parseValue = parseInt(input);
             
@@ -24,21 +53,31 @@
             alert(parseValue);
         }
 
-        
-        function twonumbers() {
-            let numbers = [1, 1, 2, 2, 2, 3, 3, 4, 5, 5, 5, 6, 6, 7, 7, 7, 8, 9, 9, 9];
-            
-            let counts = 0;
-            for (let i = 0; i < numbers.length - 1; i++) {
-              if (numbers[i] === numbers[i+1]) {
-                if (counts[numbers[i]]) {
-                  counts[numbers[i]] += 1;
-                } else {
-                  counts[numbers[i]] = 1;
-                }
-              }
-            }
-            alert(counts);
+      /*counts the number with the same value in a 2 consecutive order.*/
+      let numbers = [1, 1, 2, 2, 2, 3, 3, 4, 5, 5, 5, 6, 6, 7, 7, 7, 8, 9, 9, 9, 7, 7, 7];
+      let count = 0;
+
+      for(let i=0;i<numbers.length;i++) {
+        if(numbers[i] === numbers[i+1]) {
+          count++;
+          i++;
         }
+      }
+      document.getElementById('machineLearning2').innerHTML += count;
+      
+      /*counts the number with the same value in a 2 consecutive order.*/
+      let add = 0;
+      const consecutiveNumberby3 = (target,item) => {
+        item.forEach((value, index) => {
+          if((item[index] === item[index+1]) && item[index] === item[index+2] ) {
+            add++;
+          } 
+        })
+       document.getElementById(target).innerHTML = add;
+      }
+
+      consecutiveNumberby3('machineLearning3',numbers);
+      
+
     </script>
 </html>
