@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <title>JavaScript exercise 6</title>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="row mt-4">
+                <div class="col-sm-8">
+                    <input type="number" class="form-control" id="inputNumber">
+                </div>
+                <div class="col-sm-4">
+                    <button class="btn bg-primary" onclick="digitToWord()">Convert</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div id="numberToWords"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <script>
+        const digitToWord = (number) => {
+            const word = ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine'];
+            const formatter = number.toString().split('').map((num) => word[num]);
+                if(number < 0) {
+                    return 'Negative' + formatter;
+                } else {
+                    return formatter;
+                }
+        };
+        const convert  = () => {
+            const inputNum = parseInt(document.getElementById('numberToWords').value);
+            const word = digitToWord(inputNum);
+            
+        }
+
+
+
+        /*
+        const convertToWords = () => {
+            let toWord = '';
+            let inputNumber = document.getElementById('inputNumber').value;
+            for(let i=0;i<inputNumber.length;i++) {
+                switch (inputNumber[i]) {
+                    case '1':
+                        toWord += ' one';
+                        break;
+                    case '2':
+                        toWord += ' two';
+                        break;
+                    case '3':
+                        toWord += ' three';
+                        break;
+                    case '4':
+                        toWord += ' four';
+                        break;
+                    case '5':
+                        toWord += ' five';
+                        break;
+                    case '6':
+                        toWord += ' six';
+                        break;
+                    case '7':
+                        toWord += ' seven';
+                        break;
+                    case '8':
+                        toWord += ' eight';
+                        break;
+                    case '9':
+                        toWord += ' nine';
+                        break;
+                    case '0':
+                        toWord += ' zero';
+                        break;
+                }
+            }
+            document.getElementById('numberToWords').innerHTML = toWord;
+        }*/
+    </script>
+</body>
+</html>
