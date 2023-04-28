@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Machine Learning 1 </title>
+    <style>
+        body {
+            background: black;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        .div {
+            margin-block: 1em;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="div">
+    <label>Input an character</label>
+	<input type="text" id="char" maxlength="1">
+	<button type="button" onclick="checkChar()">Check</button>
+    </div>
+
+    <div class="div">
+        <label>Calculate</label>
+        <input type="number" id="num1">
+        <input type="number" id="num2">
+        <button type="button" onclick="add()">+</button>
+        <button type="button" onclick="minus()">-</button>
+        <button type="button" onclick="multi()">*</button>
+        <button type="button" onclick="divide()">/</button>
+        <button type="button" onclick="expo()">^</button>
+        <div>
+            <h1 id="result">0</h1>
+        </div>
+    </div>
+
+	<script>
+        
+
+        function checkChar() {
+            let char = document.getElementById("char").value;
+            const vowel = ['a','e','i','o','u'];
+
+            switch(char) {
+                case (vowel.includes(char.toLowerCase())):
+                    alert('vowel');
+                    break;
+                default:
+                    alert('consonant');
+            }
+            
+        }
+
+        const add = () => {
+            const num1 = document.getElementById('num1').value;
+            const num2 = document.getElementById('num2').value;
+            document.getElementById('result').innerHTML = Number(num1) + Number(num2);
+        }
+        const minus = () => {
+            const num1 = document.getElementById('num1').value;
+            const num2 = document.getElementById('num2').value;
+            document.getElementById('result').innerHTML = Number(num1) - Number(num2);
+        }
+        const multi = () => {
+            const num1 = document.getElementById('num1').value;
+            const num2 = document.getElementById('num2').value;
+            document.getElementById('result').innerHTML = Number(num1) * Number(num2);
+        }
+        const divide = () => {
+            const num1 = document.getElementById('num1').value;
+            const num2 = document.getElementById('num2').value;
+            document.getElementById('result').innerHTML = Number(num1) / Number(num2);
+        }
+        const expo = () => {
+            const num1 = document.getElementById('num1').value;
+            const num2 = document.getElementById('num2').value;
+            document.getElementById('result').innerHTML = Number(num1) ** Number(num2);
+        }
+	</script>
+</body>
+</html>
